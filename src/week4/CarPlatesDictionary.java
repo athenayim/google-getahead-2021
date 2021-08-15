@@ -23,7 +23,7 @@ public class CarPlatesDictionary {
   }
 
   // Checks if string contains all characters provided in the charCount array
-  public boolean containsAllChars(String s, int[] charCount) {
+  private boolean containsAllChars(String s, int[] charCount) {
     int[] counts = Arrays.copyOf(charCount, charCount.length);
     for (int i = 0; i < s.length(); i++) {
       int currChar = s.charAt(i) - 'a';
@@ -40,12 +40,12 @@ public class CarPlatesDictionary {
   }
 
   // Returns only letters from a string
-  public String getLetters(String s) {
+  private String getLetters(String s) {
     return s.replaceAll("[^a-zA-Z]", "");
   }
 
   // Returns frequencies of characters in a string
-  public int[] getCharCount(String s) {
+  private int[] getCharCount(String s) {
     String letters = getLetters(s).toLowerCase();
     int[] charCount = new int[26];
     for (int i = 0; i < letters.length(); i++) {
@@ -56,7 +56,7 @@ public class CarPlatesDictionary {
   }
 
   // Provides string representation of character counts
-  public void showCharCounts(int[] charCount) {
+  private void showCharCounts(int[] charCount) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < charCount.length; i++) {
       sb.append((char) (i + 'a')).append(": ").append(charCount[i]).append("\n");
